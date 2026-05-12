@@ -1,0 +1,66 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+img {
+    width: 20rem;
+    height: 41rem;
+}
+
+.Carrossel {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+}
+
+.bg {
+    display: flex;
+    gap: 8rem;
+}
+
+.bg li {
+    /* transform: skew(-20deg); */
+    position: relative;
+    overflow: visible;
+}
+
+.bg li::before {
+  content: "";
+  position: absolute;
+
+  top: 40px;
+  bottom: 10px;
+
+  left: 0;
+  right: 0;
+
+  background: #3498db;
+
+  transform: skewY(-10deg);
+
+  z-index: -1;
+}
+
+.bg li div {
+    position: absolute;
+    bottom: 20%;
+    background-color: blue;
+    width: 110%;
+    clip-path: polygon(
+    0 0,
+    100% 0,
+    90% 100%,
+    0 100%
+  );
+  text-align: center;
+  padding: 1rem 2rem;
+  font-size: 14px;
+}
+
+.bg li * {
+    position: relative;
+    z-index: 1;
+}
