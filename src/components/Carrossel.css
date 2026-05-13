@@ -25,14 +25,14 @@ img {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    height: 100vh;
+    height: 90vh;
     align-items: center;
 }
 
 .bg {
     display: flex;
     justify-content: center;
-    gap: 10rem;
+    gap: 6rem;
 }
 
 .bg li {
@@ -40,6 +40,26 @@ img {
     position: relative;
     overflow: visible;
     width: 20%;
+    transform: scale(1);
+    transition: ease-in-out all .3s;
+}
+
+.bg:has(li:hover) li:not(:hover) {
+    transform: scale(0.9);
+}
+
+.bg li:hover {
+    transform: scale(1.1);
+}
+
+.bg li:hover - li {
+    transform: translateX(15px) scale(0.9);
+}
+
+.bg li:has(+ li:hover),
+.bg li:has(+ li + li:hover),
+.bg li:has(+ li + li + li:hover) {
+    transform: translateX(-15px) scale(0.9);
 }
 
 .bg li:hover::before {
