@@ -8,8 +8,8 @@ import { Carrossel } from './components/Carrossel'
 function App() {
   const imgs = [
     {src: "../public/imgs/dante.webp", alt: "Dante", title: "The Legendary Devil Hunter"},
-    {src: "../public/imgs/nero.webp", alt: "Vergil", title: "The Devil Hunter"},
-    {src: "../public/imgs/v.webp", alt: "Nero", title: "The Mysterious One"}
+    {src: "../public/imgs/nero.webp", alt: "Nero", title: "The Devil Hunter"},
+    {src: "../public/imgs/v.webp", alt: "V", title: "The Mysterious One"}
   ]
 
   return (

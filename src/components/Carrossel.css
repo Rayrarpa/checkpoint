@@ -1,11 +1,24 @@
 body {
+    padding: 2rem 0;
     background-color: black;
     color: white;
 }
 
 img {
-    width: 20rem;
-    height: 41rem;
+    width: 80%;
+    /* height: 38rem; */
+    position: absolute;
+    /* left: -50px; */
+}
+
+.Nero {
+    width: 80%;
+    left: 7%;
+}
+
+.V {
+    width: 63%;
+    left: 10%;
 }
 
 .Carrossel {
@@ -18,26 +31,37 @@ img {
 
 .bg {
     display: flex;
-    gap: 8rem;
+    justify-content: center;
+    gap: 10rem;
 }
 
 .bg li {
     /* transform: skew(-20deg); */
     position: relative;
     overflow: visible;
+    width: 20%;
+}
+
+.bg li:hover::before {
+  background: #3498db;
+
+}
+
+.bg li:hover div {
+    background: blue;
 }
 
 .bg li::before {
   content: "";
   position: absolute;
 
-  top: 40px;
+  top: 20px;
   bottom: 10px;
 
-  left: 0;
-  right: 0;
+  left: -20px;
+  right: 20px;
 
-  background: #3498db;
+  background: grey;
 
   transform: skewY(-10deg);
 
@@ -47,8 +71,9 @@ img {
 .bg li div {
     position: absolute;
     bottom: 20%;
-    background-color: blue;
-    width: 110%;
+    left: -12.3%;
+    background-color: rgb(84, 84, 84);
+    width: 120%;
     clip-path: polygon(
     0 0,
     100% 0,

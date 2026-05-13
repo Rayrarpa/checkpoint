@@ -9,7 +9,7 @@ export function Carrossel({ data }) {
             {data.map((item, index) => {
                 return (
                     <li>
-                        <img src={item.src} alt={data.alt} key={index} />
+                        <img src={item.src} alt={item.alt} key={index} className={item.alt} />
                         <div>
                             <h2>{item.title}</h2>
                             <h1>{item.alt}</h1>
