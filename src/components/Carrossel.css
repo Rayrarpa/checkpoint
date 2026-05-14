@@ -45,30 +45,29 @@ img {
 }
 
 .bg:has(li:hover) li:not(:hover) {
-    transform: scale(0.9);
+    filter: brightness(0.5);
 }
 
 .bg li:hover {
     transform: scale(1.1);
+    z-index: 10;
+    cursor: pointer;
 }
 
-.bg li:hover - li {
-    transform: translateX(15px) scale(0.9);
+.bg li:hover ~ li {
+    transform: translateX(20px) scale(0.9);
 }
 
-.bg li:has(+ li:hover),
-.bg li:has(+ li + li:hover),
-.bg li:has(+ li + li + li:hover) {
-    transform: translateX(-15px) scale(0.9);
-}
+.bg li:has(~ li:hover) {
+    transform: translateX(-20px) scale(0.9);
+}   
 
 .bg li:hover::before {
   background: #3498db;
-
 }
 
 .bg li:hover div {
-    background: blue;
+    background: rgb(0, 0, 255, 0.05);
 }
 
 .bg li::before {
@@ -92,7 +91,7 @@ img {
     position: absolute;
     bottom: 20%;
     left: -12.3%;
-    background-color: rgb(84, 84, 84);
+    background-color: rgb(84, 84, 84, 0.05);
     width: 120%;
     clip-path: polygon(
     0 0,
@@ -100,9 +99,13 @@ img {
     90% 100%,
     0 100%
   );
-  text-align: center;
-  padding: 1rem 2rem;
-  font-size: 14px;
+    text-align: center;
+    padding: 1rem 2rem;
+    font-size: 14px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
 }
 
 .bg li * {
